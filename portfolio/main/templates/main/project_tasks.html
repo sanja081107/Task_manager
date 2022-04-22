@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block body %}
+
+<h1>My tasks</h1>
+{% for el in task %}
+    <div class="alert alert-warning">
+        <div class="card-body">
+            <img src="{{ el.image }}" width="300" height="400">
+            <div class='card-body'>
+                <h5 class="card-text">{{ el.title }}</h5>
+                <a href="{% url 'project_detail_task' el.id %}" class="btn btn-primary">More info</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock %} с

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+
+<h1>Main page</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid amet aperiam at aut beatae consequuntur debitis, dignissimos distinctio eligendi et eveniet fugit ipsa iste laborum nam nihil nulla, porro quam quisquam reiciendis sapiente veritatis vero. Aliquid illum impedit incidunt?</p>
+<div class="home-form">
+    <form action="{% url 'create_task' %}">
+        <button type="submit" class="btn btn-danger">Create task</button>
+    </form>
+    <form action="{% url 'create_news' %}">
+        <button type="submit" class="btn btn-danger">Create news</button>
+    </form>
+</div>
+
+
+{% endblock %}

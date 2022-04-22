@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Add news
+{% endblock %}
+
+{% block body %}
+
+<h1>Create news</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.title }}<br>
+    {{ form.text }}<br>
+    {{ form.date }}<br>
+    <button type="submit" class="btn btn-success">Добавить</button>
+</form>
+
+{% endblock %}

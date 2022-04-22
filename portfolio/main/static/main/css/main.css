@@ -1,0 +1,94 @@
+body {
+    background-image: url(grad3.jpg);
+    background-attachment: fixed;
+}
+aside {
+    float: left;
+    background: #212529;
+    width: 20%;
+    padding: 1%;
+    height: 100vh;
+    color: white;
+    border-right: 5px solid brown;
+    position: fixed;
+
+}
+aside img {
+    float: left;
+    width: 60px;
+
+}
+aside .logo {
+    font-size: 30px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: 0px;
+}
+aside h3 {
+    margin-top: 30px;
+}
+aside a {
+    text-decoration: none;
+    color: white;
+}
+
+aside ul {list-style: none}
+
+aside ul li {
+    color: #0D6EFD;
+    margin-left: -20px;
+    margin-top: 10px;
+    transition: transform .4s ease;
+}
+aside a:hover {color: white;}
+
+aside ul a:hover, aside ul li:hover {
+    color: blue;
+    transform: scale(1.05);
+}
+
+
+
+main .home {
+    width: 80%;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    color: black;
+    position: relative;
+    left: 20%;
+
+}
+main form {
+    width: 40%;
+    margin: 20px auto;
+}
+
+main .home p {
+    width: 50%;
+    margin: 20px auto;
+}
+main textarea {
+    height: 20vh;
+}
+main .home-form {
+    display: inline-flex;
+    width: 30%;
+}
+main .home-form button {
+    margin: 0px 20px;
+    width: 150px;
+}
+.alert-warning {
+    float: left;
+    width: 30%;
+    clear: both;
+    margin: 30px 35%;
+}
+main .delete-task {
+    background: gray;
+    padding-bottom: 20px;
+}

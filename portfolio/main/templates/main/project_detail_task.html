@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+
+
+<h1>{{ task.title }}</h1>
+<div class="alert alert-warning">
+    <div class="card-body">
+        <img src="{{ task.image }}" width="300" height="400">
+        <div class='card-body'>
+            <h5>Название:</h5>
+            <p>{{ task.title }}</p>
+            <h5>Поное описание:</h5>
+            <p>{{ task.task }}</p>
+        </div>
+        <a href="{% url 'delete_task' task.id %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'update_task' task.id %}" class="btn btn-warning">Edit</a>
+    </div>
+</div>
+
+
+{% endblock %}
