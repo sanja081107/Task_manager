@@ -8,7 +8,8 @@
 
 
 <h1>{{ task.title }}</h1>
-<div class="alert alert-warning">
+<form>
+<div class="delete-task">
     <div class="card-body">
         <img src="{{ task.image }}" width="300" height="400">
         <div class='card-body'>
@@ -21,6 +22,6 @@
         <a href="{% url 'update_task' task.id %}" class="btn btn-warning">Edit</a>
     </div>
 </div>
-
+</form>
 
 {% endblock %}

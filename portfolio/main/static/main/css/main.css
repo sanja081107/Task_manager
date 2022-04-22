@@ -49,7 +49,6 @@ aside ul a:hover, aside ul li:hover {
 }
 
 
-
 main .home {
     width: 80%;
     float: left;
@@ -60,7 +59,6 @@ main .home {
     color: black;
     position: relative;
     left: 20%;
-
 }
 main form {
     width: 40%;
@@ -84,9 +82,7 @@ main .home-form button {
 }
 .alert-warning {
     float: left;
-    width: 30%;
-    clear: both;
-    margin: 30px 35%;
+    margin: 19px;
 }
 main .delete-task {
     background: gray;

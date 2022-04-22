@@ -1,5 +1,4 @@
 from django.db import models
-from django.http import HttpResponse
 
 # Create your models here.
 class Task_free(models.Model):
@@ -10,6 +9,9 @@ class Task_free(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return f'/{self.id}'
 
     def image(self):
         s = f'{self.task_img}'

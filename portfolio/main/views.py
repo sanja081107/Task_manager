@@ -28,7 +28,7 @@ def create_task(request):
         form = Task_freeForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('project_tasks')
         else:
             error = 'input again'
     form = Task_freeForm()
@@ -47,7 +47,9 @@ class TaskDeleteView(DeleteView):
     success_url = '/project_tasks'
 
 class TaskUpdateView(UpdateView):
-    pass
+    model = Task_free
+    template_name = 'main/create_task.html'
+    form_class = Task_freeForm
 
 # ------------------------------------------------------
 def create_news(request):
