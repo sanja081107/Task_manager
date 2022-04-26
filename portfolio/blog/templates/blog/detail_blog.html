@@ -22,8 +22,18 @@
         </div>
         <a href="{% url 'delete_blog' post.id %}" class="btn btn-danger">Delete</a>
         <a href="{% url 'comment_blog' post.id %}" class="btn btn-warning">Leave comment</a>
+        <a href="{% url 'update_blog' post.id %}" class="btn btn-warning">Edit blog</a>
     </div>
 </div>
+
+{% for el in comment %}
+    <div class="comment-blog">
+        <p>Author: {{ el.author }}</p>
+        <p>Comment: {{ el.body }}</p>
+        <p>Created: {{ el.created }}</p>
+        <a href="{% url 'delete_comment' el.id %}" class="btn btn-danger">Delete</a>
+    </div>
+{% endfor %}
 </form>
 
 {% endblock %}

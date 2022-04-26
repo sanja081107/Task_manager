@@ -3,3 +3,8 @@ main .post-body {
     margin: 30px 35%;
 
 }
+main .comment-blog {
+    margin-top: 30px;
+    background: grey;
+    padding: 5%;
+}

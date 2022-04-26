@@ -38,11 +38,25 @@ class BlogDeleteView(DeleteView):
     context_object_name = 'blog'
     success_url = '/blog'
 
+class BlogUpdateView(UpdateView):
+    model = Post
+    template_name = 'blog/create_blog.html'
+    form_class = PostForm
+
+
+class CommentDeleteView(DeleteView):
+    model = Comment
+    pk = model
+    template_name = 'blog/delete_comment.html'
+    success_url = f'/blog'
+
 
 def detail_blog(request, pk):
     post = Post.objects.get(pk=pk)
+    comment = Comment.objects.filter(post=post)
     context = {
         'post': post,
+        'comment': comment,
         'title': 'Detail blog page'
     }
     return render(request, 'blog/detail_blog.html', context)
@@ -62,7 +76,7 @@ def comment_blog(request, pk):
                 post=post,
             )
             comment.save()
-            return redirect('blog')
+            return redirect(f'/blog{post.id}/detail_blog')
         else:
             error = 'error'
 

@@ -16,7 +16,7 @@ def project_tasks(request):
 def project_detail_task(request, pk):
     task = Task_free.objects.get(pk=pk)
     context = {'task': task,
-               'title': 'Detail task page'}
+               'title': 'Project detail task'}
     return render(request, 'main/project_detail_task.html', context)
 # ------------------------------------------------------
 def about_us(request):
