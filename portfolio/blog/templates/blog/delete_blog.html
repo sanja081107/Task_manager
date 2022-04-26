@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete task
+{% endblock %}
+
+{% block body %}
+
+<h1>Delete Blog</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="delete-task">
+        <div class='card-body'>
+            <h5>Название:</h5>
+            <p>{{ blog.title }}</p>
+            <h5>Поное описание:</h5>
+            <p>{{ blog.text }}</p>
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

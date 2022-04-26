@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create blog
+{% endblock %}
+
+{% block body %}
+
+<h1>Create blog</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="delete-task">
+        <div class='card-body'>
+            <p>{{ form.title }}</p>
+            <p>{{ form.text }}</p>
+            <p>Choose category</p>
+            <p>{{ form.categories }}</p>
+            <button type="submit" class="btn btn-danger">Create</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

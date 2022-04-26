@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+
+{% block body %}
+
+<h1>Blog page</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam architecto, assumenda debitis distinctio ducimus, esse et inventore perspiciatis quae quas quibusdam quod! Explicabo, numquam, optio. Aut iste magnam quaerat tempore.</p>
+<a href="{% url 'create_blog' %}" class="btn btn-danger"> Create blog</a>
+{% if posts %}
+    {% for el in posts %}
+        <div class='post-body'>
+            <div class="alert alert-danger">
+                <h5 class="card-text">{{ el.title }}</h5>
+                <p>{{ el.text }}</p>
+                <p>{{ el.created }}</p>
+                <a href="{% url 'detail_blog' el.id %}" class="btn btn-danger"> More info</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

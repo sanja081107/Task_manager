@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+
+
+<h1>{{ post.title }}</h1>
+<form>
+<div class="delete-task">
+    <div class="card-body">
+        <div class='card-body'>
+            <h5>Название:</h5>
+            <p>{{ post.title }}</p>
+            <h5>Поное описание:</h5>
+            <p>{{ post.text }}</p>
+            {% for el in post.categories.all %}
+                {{ el }}<br>
+            {% endfor %}
+        </div>
+        <a href="{% url 'delete_blog' post.id %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'comment_blog' post.id %}" class="btn btn-warning">Leave comment</a>
+    </div>
+</div>
+</form>
+
+{% endblock %}

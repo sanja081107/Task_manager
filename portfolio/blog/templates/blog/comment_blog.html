@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+
+
+<h1>{{ form.title }}</h1>
+<form method="post">
+{% csrf_token %}
+<div class="delete-task">
+    <div class="card-body">
+        <div class='card-body'>
+            <h5>Название:</h5>
+            <p>{{ form.author }}</p>
+            <h5>Поное описание:</h5>
+            {{ form.body }}
+        </div>
+        <button type="submit" class="btn btn-danger">Comment</button>
+    </div>
+</div>
+</form>
+
+{% endblock %}
