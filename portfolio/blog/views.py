@@ -44,11 +44,21 @@ class BlogUpdateView(UpdateView):
     form_class = PostForm
 
 
-class CommentDeleteView(DeleteView):
-    model = Comment
-    pk = model
-    template_name = 'blog/delete_comment.html'
-    success_url = f'/blog'
+# class CommentDeleteView(DeleteView):
+#     model = Comment
+#     pk = model
+#     template_name = 'blog/delete_comment.html'
+#     success_url = '/blog'
+
+
+def comment_delete(request, pk):
+    comment = Comment.objects.get(pk=pk)
+    post = comment.post.pk
+    if request.method == 'POST':
+        comment.delete()
+        return redirect(f'/blog{comment.post.pk}/detail_blog')
+    context = {'post': post}
+    return render(request, 'blog/delete_comment.html', context)
 
 
 def detail_blog(request, pk):
