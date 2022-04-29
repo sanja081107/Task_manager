@@ -53,12 +53,10 @@ class BlogUpdateView(UpdateView):
 
 def comment_delete(request, pk):
     comment = Comment.objects.get(pk=pk)
-    post = comment.post.pk
     if request.method == 'POST':
         comment.delete()
         return redirect(f'/blog{comment.post.pk}/detail_blog')
-    context = {'post': post}
-    return render(request, 'blog/delete_comment.html', context)
+    return render(request, 'blog/delete_comment.html')
 
 
 def detail_blog(request, pk):
